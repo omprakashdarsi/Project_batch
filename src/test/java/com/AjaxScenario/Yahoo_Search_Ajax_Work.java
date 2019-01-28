@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -73,34 +74,44 @@ public class Yahoo_Search_Ajax_Work extends GenericMethods{
 		
 		try {
 			
-			boolean columnexist=true;
+			
 			//FileOutputStream fos=new FileOutputStream(f);			
 			XSSFWorkbook workbook= new  XSSFWorkbook();
 			XSSFSheet sheet = workbook.createSheet("Results"); 				
+			sheet.createRow(0).createCell(0).setCellValue("Search Result");
+			sheet.getRow(0).createCell(1).setCellValue("Status");
 			
-     			for(int r=0;r<=searchResults.size()-1;r++){
-				//creating header
-				if(columnexist)
-				{
-					sheet.createRow(r).createCell(0).setCellValue("Search Result");
-					sheet.getRow(0).createCell(1).setCellValue("Status");
-					
-					sheet.createRow(r+1).createCell(0).setCellValue(searchResults.get(r));
-					sheet.createRow(r+1).createCell(0).setCellValue("true");
-					columnexist=false;
-				}else
-				{
-					int getRowCount=sheet.getPhysicalNumberOfRows();
-					sheet.createRow(getRowCount+1).createCell(0).setCellValue("welcome");
-					sheet.getRow(0).createCell(1).setCellValue("true");
-					
-					
-				}
+			
+     			for(int r=1;r<=searchResults.size()-1;r++){
+     				
+     				
+     				Row row= sheet.createRow(r);
+     				
+     					
+     					row.createCell(0).setCellValue(searchResults.get(r));
+    					row.createCell(1).setCellValue("true");
+    					
+     					
+     					
+     					
+     			
+    					//				//creating header
+//				if(!columnexist)
+//				{
+//					
+//					
+//					sheet.createRow(r+1).createCell(1).setCellValue(searchResults.get(r));
+//					sheet.createRow(r+1).createCell(2).setCellValue("true");
+//					columnexist=true;
+//				}else
 				
+					//int getRowCount=sheet.getPhysicalNumberOfRows();
+     				
+					
 				
 			}
 			
-		    File file= new File(System.getProperty("user.dir")+"\\"+"testoutput4.xlsx");
+		    File file= new File(System.getProperty("user.dir")+"\\"+"testoutput7.xlsx");
 			System.out.println("file created "+file);
 			FileOutputStream out = new FileOutputStream(file);
             workbook.write(out);

@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import java.util.Date;
+
 import org.openqa.selenium.support.PageFactory;
 
 import com.GenericMethods.GenericMethods;
@@ -28,7 +30,7 @@ public class Test_Date_Picker extends GenericMethods{
 	
 	
 	  @When("recieve date from user \"([^\"]*)\"$")
-	  public static void Recievedate(String date) throws Exception{
+	  public static void Recievedate(Date date) throws Exception{
 		  
 		  DatePickerScenario obj= PageFactory.initElements(driver, DatePickerScenario.class);
 		  obj.PickNextMonth(date);

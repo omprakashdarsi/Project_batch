@@ -29,18 +29,18 @@ public class DatePickerScenario {
 	
 	//====================================Methods ========================================================
 	
-	public static void PickNextMonth(String date) throws Exception{
+	public static void PickNextMonth(Date date) throws Exception{
 		
 		System.out.println(date);
 		
-		SimpleDateFormat format1= new SimpleDateFormat("DD/MM/YYYY");
+		SimpleDateFormat format1= new SimpleDateFormat("MM/DD/YYYY");
 		
-		Date datetoselect= format1.parse(date);
-		System.out.println(datetoselect);
-		String month=new SimpleDateFormat("MMMM").format(datetoselect);
-		String year = new SimpleDateFormat("YYYY").format(datetoselect);
-		System.out.println(month);
-		System.out.println(year);
+		String str= format1.format(date);
+        System.out.println("test:" +str);
+//		String month=new SimpleDateFormat("MMMM").format(datetoselect);
+//		String year = new SimpleDateFormat("YYYY").format(datetoselect);
+//		System.out.println(month);
+//		System.out.println(year);
 		
 		Depart_date_element.click();
 		System.out.println("date picker clicked");
@@ -52,7 +52,7 @@ public class DatePickerScenario {
 		System.out.println(currentyaer);
 		
 		
-		if(month.toUpperCase().equals(currentmonth) && (year.equals(currentyaer))){
+		/*if(month.toUpperCase().equals(currentmonth) && (year.equals(currentyaer))){
 			
 			System.out.println("date provided is current date so pick the date  ");
 			
@@ -63,7 +63,7 @@ public class DatePickerScenario {
 		}
 		
 		//Next_Button.click();
-		
+*/		
 		
 		
 	}
