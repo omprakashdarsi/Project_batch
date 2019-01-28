@@ -61,7 +61,7 @@ public class GenericMethods {
 				driver=new FirefoxDriver();
 				break;
 			case "chrome":
-				System.setProperty("webdriver.chrome.driver", "C:\\Users\\Home\\Downloads\\New_Setup_Files\\chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 				driver=new ChromeDriver();
 				
 						

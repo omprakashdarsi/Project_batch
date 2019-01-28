@@ -73,37 +73,32 @@ public class Yahoo_Search_Ajax_Work extends GenericMethods{
 		
 		try {
 			
-			boolean columnexist=false;
+			boolean columnexist=true;
 			//FileOutputStream fos=new FileOutputStream(f);			
 			XSSFWorkbook workbook= new  XSSFWorkbook();
-			XSSFSheet sheet = workbook.createSheet("Results"); 
-		
+			XSSFSheet sheet = workbook.createSheet("Results"); 				
 			
-			sheet.createRow(1).getCell(0).setCellValue(searchResults.get(2));
-			sheet.createRow(1).getCell(1).setCellValue("true");
-			
-			
-			/*for(int r=0;r<=searchResults.size()-1;r++){
+     			for(int r=0;r<=searchResults.size()-1;r++){
 				//creating header
-				if(!columnexist)
+				if(columnexist)
 				{
 					sheet.createRow(r).createCell(0).setCellValue("Search Result");
 					sheet.getRow(0).createCell(1).setCellValue("Status");
 					
-					sheet.createRow(r+1).getCell(0).setCellValue(searchResults.get(r));
-					sheet.createRow(r+1).getCell(1).setCellValue("true");
-					
+					sheet.createRow(r+1).createCell(0).setCellValue(searchResults.get(r));
+					sheet.createRow(r+1).createCell(0).setCellValue("true");
+					columnexist=false;
 				}else
 				{
 					int getRowCount=sheet.getPhysicalNumberOfRows();
-					sheet.createRow(getRowCount+1).getCell(0).setCellValue("welcome");
-					sheet.getRow(0).getCell(1).setCellValue("true");
+					sheet.createRow(getRowCount+1).createCell(0).setCellValue("welcome");
+					sheet.getRow(0).createCell(1).setCellValue("true");
 					
 					
 				}
-				*/
 				
-			
+				
+			}
 			
 		    File file= new File(System.getProperty("user.dir")+"\\"+"testoutput4.xlsx");
 			System.out.println("file created "+file);

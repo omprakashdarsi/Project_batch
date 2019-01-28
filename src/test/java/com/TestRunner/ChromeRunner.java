@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		 features = {"Features"}
 		,glue={"stepDefinitions"},
-		 tags={"@Test_chrome,"},monochrome = true,
+		 tags={"@Date_Pick,"},monochrome = true,
 		 plugin={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"}
 
 		
