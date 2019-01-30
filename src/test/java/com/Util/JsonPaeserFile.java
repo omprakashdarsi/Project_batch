@@ -7,10 +7,13 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import com.google.gson.JsonObject;
+
 public class JsonPaeserFile {
 	
+	public static JSONObject jsonObject;
 	
-	public static void parseJSONfile(JSONObject jsonObject)
+	public static void parseJSONfile()
 	{
 	    JSONParser parser = new JSONParser();
 	    try
@@ -43,7 +46,7 @@ public class JsonPaeserFile {
 	try
 	{
 	  //Reading the array
-	    JSONArray environments = (JSONArray)jsonObject.get("Generic_Testdata");
+	    JSONArray environments = (JSONArray)jsonObject.get("GenericData");
 
 
 	    for(int i=0;i<=environments.size()-1;i++)
@@ -51,13 +54,13 @@ public class JsonPaeserFile {
 	    {
 	    JSONObject item = (JSONObject)environments.get(i);
 
-	         String env_Status = (String)item.get("Execute_Test");
+	         String env_Status = (String)item.get("Sno");
 
 
-	         if(env_Status.equalsIgnoreCase("yes"))
+	         if(env_Status.equalsIgnoreCase("2"))
 	         {
 
-	         url = (String)item.get("url");
+	         url = (String)item.get("Values");
 
 	         System.out.println(url);
 
@@ -78,11 +81,18 @@ public class JsonPaeserFile {
 	}
 	return url;
 	}
+	
+	
+	
+public static void main(String[] args) {
+	parseJSONfile();
+	
+	geturl();
+}	
 }
 
 	
-	
-	
+
 	
 
 

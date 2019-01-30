@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -78,14 +79,16 @@ public class Yahoo_Search_Ajax_Work extends GenericMethods{
 			XSSFWorkbook workbook= new  XSSFWorkbook();
 			XSSFSheet sheet = workbook.createSheet("Results"); 				
 			
-     			for(int r=0;r<=searchResults.size()-1;r++){
+			sheet.createRow(0).createCell(0).setCellValue("Search Result");
+			sheet.getRow(0).createCell(1).setCellValue("Status");
+			
+     			for(int r=1;r<=searchResults.size()-1;r++){
 				//creating header
 				if(columnexist)
 				{
-					sheet.createRow(r).createCell(0).setCellValue("Search Result");
-					sheet.getRow(0).createCell(1).setCellValue("Status");
 					
-					sheet.createRow(r+1).createCell(0).setCellValue(searchResults.get(r));
+					Row row= sheet.createRow(r);
+					sheet.createRow(0).createCell(0).setCellValue(searchResults.get(r));
 					sheet.createRow(r+1).createCell(0).setCellValue("true");
 					columnexist=false;
 				}else

@@ -31,11 +31,17 @@ public class DatePickerScenario {
 	
 	public static void PickNextMonth(String date) throws Exception{
 		
-		System.out.println(date);
+       SimpleDateFormat sdf=new SimpleDateFormat("DD/MM/YYYY");
 		
-		SimpleDateFormat format1= new SimpleDateFormat("DD/MM/YYYY");
+		sdf.format(new Date());
 		
-		Date datetoselect= format1.parse(date);
+		System.out.println(sdf.format(new Date()));
+		
+		
+		
+		
+		
+		
 		System.out.println(datetoselect);
 		String month=new SimpleDateFormat("MMMM").format(datetoselect);
 		String year = new SimpleDateFormat("YYYY").format(datetoselect);
