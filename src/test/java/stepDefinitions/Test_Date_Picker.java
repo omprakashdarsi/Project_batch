@@ -22,10 +22,6 @@ public class Test_Date_Picker extends GenericMethods{
 		
 		launchBrowser(URL,browser);
 		
-		
-		
-		
-		
 	 }
 	
 	
@@ -34,10 +30,6 @@ public class Test_Date_Picker extends GenericMethods{
 		  
 		  DatePickerScenario obj= PageFactory.initElements(driver, DatePickerScenario.class);
 		  obj.PickNextMonth(date);
-		  
-		  
-		  
-		  
 		  
 	  }
 	 

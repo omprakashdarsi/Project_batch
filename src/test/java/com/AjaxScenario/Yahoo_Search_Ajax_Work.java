@@ -81,6 +81,7 @@ public class Yahoo_Search_Ajax_Work extends GenericMethods{
 			sheet.createRow(0).createCell(0).setCellValue("Search Result");
 			sheet.getRow(0).createCell(1).setCellValue("Status");
 			
+<<<<<<< HEAD
 			
      			for(int r=1;r<=searchResults.size()-1;r++){
      				
@@ -104,6 +105,28 @@ public class Yahoo_Search_Ajax_Work extends GenericMethods{
 //					sheet.createRow(r+1).createCell(2).setCellValue("true");
 //					columnexist=true;
 //				}else
+=======
+			sheet.createRow(0).createCell(0).setCellValue("Search Result");
+			sheet.getRow(0).createCell(1).setCellValue("Status");
+			
+     			for(int r=1;r<=searchResults.size()-1;r++){
+				//creating header
+				if(columnexist)
+				{
+					
+					Row row= sheet.createRow(r);
+					sheet.createRow(0).createCell(0).setCellValue(searchResults.get(r));
+					sheet.createRow(r+1).createCell(0).setCellValue("true");
+					columnexist=false;
+				}else
+				{
+					int getRowCount=sheet.getPhysicalNumberOfRows();
+					sheet.createRow(getRowCount+1).createCell(0).setCellValue("welcome");
+					sheet.getRow(0).createCell(1).setCellValue("true");
+					
+					
+				}
+>>>>>>> branch 'master' of https://github.com/omprakashdarsi/Project_batch
 				
 					//int getRowCount=sheet.getPhysicalNumberOfRows();
      				

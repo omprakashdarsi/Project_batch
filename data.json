@@ -1,0 +1,44 @@
+{
+    "GenericData": [
+        {
+            "Sno": "1",
+            "Details": "Env",
+            "Values": "QA"
+        },
+        {
+            "Sno": "2",
+            "Details": "url",
+            "Values": "https://www.google.com"
+        },
+        {
+            "Sno": "3",
+            "Details": "username",
+            "Values": "user01"
+        },
+        {
+            "Sno": "4",
+            "Details": "password",
+            "Values": "pass1234"
+        }
+    ],
+    "Testdata": [
+        {
+            "TewstCase": "Tc_01",
+            "Iteration": "1",
+            "FirstName": "User01",
+            "LastName": "L1"
+        },
+        {
+            "TewstCase": "Tc_01",
+            "Iteration": "2",
+            "FirstName": "User02",
+            "LastName": "L2"
+        },
+        {
+            "TewstCase": "Tc_02",
+            "Iteration": "1",
+            "FirstName": "MY",
+            "LastName": "NO"
+        }
+    ]
+}

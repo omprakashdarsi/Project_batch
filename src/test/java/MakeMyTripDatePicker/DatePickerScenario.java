@@ -31,16 +31,35 @@ public class DatePickerScenario {
 	
 	public static void PickNextMonth(Date date) throws Exception{
 		
-		System.out.println(date);
+       SimpleDateFormat sdf=new SimpleDateFormat("DD/MM/YYYY");
 		
+<<<<<<< HEAD
 		SimpleDateFormat format1= new SimpleDateFormat("MM/DD/YYYY");
+=======
+		sdf.format(new Date());
+>>>>>>> branch 'master' of https://github.com/omprakashdarsi/Project_batch
 		
+<<<<<<< HEAD
 		String str= format1.format(date);
         System.out.println("test:" +str);
 //		String month=new SimpleDateFormat("MMMM").format(datetoselect);
 //		String year = new SimpleDateFormat("YYYY").format(datetoselect);
 //		System.out.println(month);
 //		System.out.println(year);
+=======
+		System.out.println(sdf.format(new Date()));
+		
+		
+		
+		
+		
+		
+		System.out.println(datetoselect);
+		String month=new SimpleDateFormat("MMMM").format(datetoselect);
+		String year = new SimpleDateFormat("YYYY").format(datetoselect);
+		System.out.println(month);
+		System.out.println(year);
+>>>>>>> branch 'master' of https://github.com/omprakashdarsi/Project_batch
 		
 		Depart_date_element.click();
 		System.out.println("date picker clicked");
